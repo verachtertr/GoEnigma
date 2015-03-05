@@ -1,5 +1,6 @@
 package rotor
 
+
 type Rotor interface {
   Click() bool
   SetOfset(rune)
@@ -46,8 +47,8 @@ func NewRotor(config string) Rotor {
   mapping1 := make(map[rune]rune)
   inverseMapping1 := make(map[rune]rune)
   for i:=0; i<26;i++ {
-    inverseMapping1[rune(i+65)] = rune(config[i])
-    mapping1[rune(config[i])] = rune(i+65)
+    mapping1[rune(i+65)] = rune(config[i])
+    inverseMapping1[rune(config[i])] = rune(i+65)
   }
   r := EnigmaRotor{mapping: mapping1, inverseMapping: inverseMapping1, ofset: ofset1}
   return r
