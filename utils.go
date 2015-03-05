@@ -1,4 +1,4 @@
-package Enigma
+package main
 
 func Modulo(a,b int) int{
   temp := a % b

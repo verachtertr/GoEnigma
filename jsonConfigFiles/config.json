@@ -1,14 +1,10 @@
 {
-  "rotors": [
-    { "id": 1, "setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
-    { "id": 2, "setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
-    { "id": 3, "setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+  "Rotors": [
+    { "Id": 1, "Setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
+    { "Id": 2, "Setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
+    { "Id": 3, "Setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
   ],
 
-  "rotor_1": 1,
-  "rotor_2": 2,
-  "rotor_3": 3,
-
-  "reflectorSetup": "YRUHQSLDPXNGOKMIEBFZCWVJAT",
-  "plugboardConfig": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  "ReflectorSetup": "YRUHQSLDPXNGOKMIEBFZCWVJAT",
+  "PlugboardConfig": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 }

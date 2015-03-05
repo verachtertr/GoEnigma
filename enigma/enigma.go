@@ -1,8 +1,9 @@
-package Enigma
+package enigma
 
 import(
   "strings"
-  )
+  "GoEnigma/rotor"
+)
 
 type Enigma interface {
   Encode(text string, rotorPos string) string
@@ -11,7 +12,7 @@ type Enigma interface {
 type EnigmaClass struct {
   reflector Reflector
   plugboard Plugboard
-  rotors [3]Rotor
+  rotors [3]rotor.Rotor
 }
 
 func (e *EnigmaClass) encode (text string, rotorPos string) string {

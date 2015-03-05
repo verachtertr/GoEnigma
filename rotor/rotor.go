@@ -1,5 +1,4 @@
-package Enigma
-
+package rotor
 
 type Rotor interface {
   Click() bool
@@ -52,4 +51,13 @@ func NewRotor(config string) Rotor {
   }
   r := EnigmaRotor{mapping: mapping1, inverseMapping: inverseMapping1, ofset: ofset1}
   return r
+}
+
+
+func Modulo(a,b int) int{
+  temp := a % b
+  if temp < 0 {
+    return (temp + b)
+  }
+  return temp
 }

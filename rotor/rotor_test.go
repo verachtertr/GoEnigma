@@ -1,4 +1,4 @@
-package Enigma
+package rotor
 
 import (
     "testing"

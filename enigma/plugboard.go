@@ -1,8 +1,8 @@
-package Enigma
+package enigma
 
 import(
   "fmt"
-  )
+)
 
 type Plugboard interface {
   Plug(rune) rune
