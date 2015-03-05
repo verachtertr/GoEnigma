@@ -24,7 +24,7 @@ func createPlugboard(config string) Plugboard {
   }
 
   // check that it is a 1 on 1 mapping
-  for i:=0; i<26;i++ {
+  for i:=int('A'); i<=int('Z');i++ {
     val1 := p[rune(i)]
     val2 := p[val1]
 
