@@ -5,18 +5,18 @@ import(
   )
 
 type Reflector interface {
-  reflect(rune) rune
+  Reflect(rune) rune
 }
 
 type EnigmaReflector struct {
   mapping map[rune]rune
 }
 
-func (e EnigmaReflector) reflect(r rune) rune {
+func (e EnigmaReflector) Reflect(r rune) rune {
   return e.mapping[r]
 }
 
-func createReflector(config string) Reflector {
+func NewReflector(config string) Reflector {
   p := make(map[rune]rune)
   // set the plugboard according to the config string
   for i:=0; i<26;i++ {

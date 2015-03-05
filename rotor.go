@@ -29,16 +29,16 @@ func (e EnigmaRotor) SetOfset(r rune) {
 }
 
 func (e EnigmaRotor) EncodeRtoL(r rune) rune {
-  after_ofset := rune(modulo(int(r - 65) + e.ofset, 26) + 65)
+  after_ofset := rune(Modulo(int(r - 65) + e.ofset, 26) + 65)
   char := e.mapping[after_ofset]
-  undo_ofset := rune(modulo(int(char - 65) - e.ofset, 26) + 65)
+  undo_ofset := rune(Modulo(int(char - 65) - e.ofset, 26) + 65)
   return undo_ofset
 }
 
 func (e EnigmaRotor) EncodeLtoR(r rune) rune {
-  after_ofset := rune(modulo(int(r - 65) + e.ofset, 26) + 65)
+  after_ofset := rune(Modulo(int(r - 65) + e.ofset, 26) + 65)
   char := e.inverseMapping[after_ofset]
-  undo_ofset := rune(modulo(int(char - 65) - e.ofset, 26) + 65)
+  undo_ofset := rune(Modulo(int(char - 65) - e.ofset, 26) + 65)
   return undo_ofset
 }
 

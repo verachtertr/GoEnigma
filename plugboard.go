@@ -5,18 +5,18 @@ import(
   )
 
 type Plugboard interface {
-  plug(rune) rune
+  Plug(rune) rune
 }
 
 type EnigmaPlugboard struct {
   plugboard map[rune]rune
 }
 
-func (e EnigmaPlugboard) plug(r rune) rune {
+func (e EnigmaPlugboard) Plug(r rune) rune {
   return e.plugboard[r]
 }
 
-func createPlugboard(config string) Plugboard {
+func NewPlugboard(config string) Plugboard {
   p := make(map[rune]rune)
   // set the plugboard according to the config string
   for i:=0; i<26;i++ {
