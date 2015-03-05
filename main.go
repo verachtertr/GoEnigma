@@ -6,16 +6,17 @@ import "GoEnigma/enigma"
 
 func main() {
 
-    if len(os.Args) == 1 {
-        println("Usage:", os.Args[0], "input.json")
-    }
-    
-    enigma_config, err := enigma.ReadConfig(os.Args[1])
-    
-    if err != nil {
-        println("Error:", err)
-    }
+	if len(os.Args) == 1 {
+		println("Usage:", os.Args[0], "input.json")
+	}
 
-    fmt.Println(enigma_config)
+	enigma_config, err := enigma.ReadConfig(os.Args[1])
+
+	if err != nil {
+		println("Error:", err)
+
+	}
+
+	fmt.Println(enigma_config)
 
 }

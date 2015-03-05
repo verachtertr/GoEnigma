@@ -12,7 +12,7 @@ Build:
 
 Run:
 
-    $ ./GoEnigma
+    $ ./GoEnigma input.json
 
 
 Testing
@@ -26,3 +26,11 @@ Unit tests depend on [GoConvey](https://github.com/smartystreets/goconvey), so i
 Run the unit tests
 
     $ go test ./... -v
+    
+
+Formatting code
+---------------
+
+Always format the code before you commit/push!
+
+    $ gofmt -l -w .
