@@ -1,7 +1,7 @@
 {
   "Rotors": [
     { "Id": 1, "Setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
-    { "Id": 2, "Setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
+    { "Id": 2, "Setup": "QWERTYUIOPASDFGHJKLZXCVBNM"},
     { "Id": 3, "Setup": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
   ],
 
