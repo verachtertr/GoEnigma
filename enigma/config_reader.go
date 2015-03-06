@@ -1,6 +1,7 @@
 package enigma
 
 import (
+	"GoEnigma/rotor"
 	"encoding/json"
 	"errors"
 	"os"
@@ -39,4 +40,18 @@ func ReadConfig(file_name string) (*EnigmaConfig, error) {
 		return &enigma, nil
 	}
 
+}
+
+func (e EnigmaConfig) CreateEnigma() Enigma {
+
+	// create the rotor
+	r := [3]rotor.Rotor{}
+	r[0] = rotor.NewRotor(e.Rotors[0].Setup)
+	r[1] = rotor.NewRotor(e.Rotors[1].Setup)
+	r[2] = rotor.NewRotor(e.Rotors[2].Setup)
+
+	p := NewPlugboard(e.PlugboardConfig)
+	refl := NewReflector(e.ReflectorSetup)
+
+	return NewEnigma(r, refl, p)
 }

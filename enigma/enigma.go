@@ -15,7 +15,7 @@ type EnigmaClass struct {
 	rotors    [3]rotor.Rotor
 }
 
-func (e *EnigmaClass) Encode(text string, rotorPos string) string {
+func (e EnigmaClass) Encode(text string, rotorPos string) string {
 	// set the start position of the rotors:
 	e.rotors[0].SetOfset(rune(rotorPos[0]))
 	e.rotors[1].SetOfset(rune(rotorPos[1]))
@@ -58,4 +58,9 @@ func (e *EnigmaClass) Encode(text string, rotorPos string) string {
 	}
 
 	return newText
+}
+
+func NewEnigma(r [3]rotor.Rotor, refl Reflector, plug Plugboard) Enigma {
+	ret := EnigmaClass{rotors: r, reflector: refl, plugboard: plug}
+	return ret
 }

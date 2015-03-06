@@ -19,5 +19,8 @@ func main() {
 	}
 
 	fmt.Println(enigma_config)
-
+	e := enigma_config.CreateEnigma()
+	encoded := e.Encode("TEST", "AAA")
+	fmt.Printf("%q \n",encoded)
+	fmt.Printf("Finished encoding \n")
 }
