@@ -1,7 +1,7 @@
 GoEnigma
 ========
 
-An enigma machine written in the golang
+An enigma machine written in Go
 
 Build
 -----
@@ -22,11 +22,11 @@ Unit tests depend on [GoConvey](https://github.com/smartystreets/goconvey), so i
 
     $ go get github.com/smartystreets/goconvey
     $ go get github.com/smartystreets/assertions
-    
+
 Run the unit tests
 
     $ go test ./... -v
-    
+
 
 Formatting code
 ---------------
