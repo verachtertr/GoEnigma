@@ -15,7 +15,7 @@ type EnigmaClass struct {
 	rotors    [3]rotor.Rotor
 }
 
-func (e *EnigmaClass) encode(text string, rotorPos string) string {
+func (e *EnigmaClass) Encode(text string, rotorPos string) string {
 	// set the start position of the rotors:
 	e.rotors[0].SetOfset(rune(rotorPos[0]))
 	e.rotors[1].SetOfset(rune(rotorPos[1]))

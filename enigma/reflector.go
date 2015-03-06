@@ -1,7 +1,7 @@
 package enigma
 
 import (
-	"fmt"
+	"log"
 )
 
 type Reflector interface {
@@ -29,8 +29,7 @@ func NewReflector(config string) Reflector {
 		val2 := p[val1]
 
 		if val2 != rune(i) {
-			fmt.Printf("Reflector: You did not give a correct config string, %q and %q should be a 1 on 1 mapping ", val1, val2)
-			// TODO exit the [program]
+			log.Fatal("Reflector: You did not give a correct config string, %q and %q should be a 1 on 1 mapping ", rune(val1), rune(val2))
 		}
 	}
 

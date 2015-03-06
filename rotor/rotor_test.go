@@ -6,12 +6,6 @@ import (
 )
 
 func TestRotor(t *testing.T) {
-	Convey("[Rotor] default constructor", t, func() {
-
-		//todo
-
-	})
-
 	Convey("[Rotor] full test", t, func() {
 
 		r1 := NewRotor("XANTIPESOKRWUDVBCFGHJLMQYZ")
