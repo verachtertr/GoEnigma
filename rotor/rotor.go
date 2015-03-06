@@ -1,5 +1,7 @@
 package rotor
 
+import ()
+
 type Rotor interface {
 	Click() bool
 	SetOfset(rune)
@@ -13,7 +15,7 @@ type EnigmaRotor struct {
 	ofset          int
 }
 
-func (e EnigmaRotor) Click() bool {
+func (e *EnigmaRotor) Click() bool {
 	e.ofset = (e.ofset + 1) % 26
 
 	if e.ofset == 0 {
@@ -23,18 +25,18 @@ func (e EnigmaRotor) Click() bool {
 	}
 }
 
-func (e EnigmaRotor) SetOfset(r rune) {
+func (e *EnigmaRotor) SetOfset(r rune) {
 	e.ofset = int(r - 65)
 }
 
-func (e EnigmaRotor) EncodeRtoL(r rune) rune {
+func (e *EnigmaRotor) EncodeRtoL(r rune) rune {
 	after_ofset := rune(Modulo(int(r-65)+e.ofset, 26) + 65)
 	char := e.mapping[after_ofset]
 	undo_ofset := rune(Modulo(int(char-65)-e.ofset, 26) + 65)
 	return undo_ofset
 }
 
-func (e EnigmaRotor) EncodeLtoR(r rune) rune {
+func (e *EnigmaRotor) EncodeLtoR(r rune) rune {
 	after_ofset := rune(Modulo(int(r-65)+e.ofset, 26) + 65)
 	char := e.inverseMapping[after_ofset]
 	undo_ofset := rune(Modulo(int(char-65)-e.ofset, 26) + 65)
@@ -49,7 +51,7 @@ func NewRotor(config string) Rotor {
 		mapping1[rune(i+65)] = rune(config[i])
 		inverseMapping1[rune(config[i])] = rune(i + 65)
 	}
-	r := EnigmaRotor{mapping: mapping1, inverseMapping: inverseMapping1, ofset: ofset1}
+	r := &EnigmaRotor{mapping: mapping1, inverseMapping: inverseMapping1, ofset: ofset1}
 	return r
 }
 

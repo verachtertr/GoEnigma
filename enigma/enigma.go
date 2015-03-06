@@ -31,21 +31,16 @@ func (e EnigmaClass) Encode(text string, rotorPos string) string {
 	newText := ""
 	for i := 0; i < len(text); i++ {
 		working := rune(text[i])
-
 		working = e.plugboard.Plug(working)
-
 		working = e.rotors[0].EncodeRtoL(working)
 		working = e.rotors[1].EncodeRtoL(working)
 		working = e.rotors[2].EncodeRtoL(working)
 
 		working = e.reflector.Reflect(working)
-
-		working = e.rotors[0].EncodeLtoR(working)
-		working = e.rotors[1].EncodeLtoR(working)
 		working = e.rotors[2].EncodeLtoR(working)
-
+		working = e.rotors[1].EncodeLtoR(working)
+		working = e.rotors[0].EncodeLtoR(working)
 		working = e.plugboard.Plug(working)
-
 		newText += string(working)
 
 		// click the rotors
