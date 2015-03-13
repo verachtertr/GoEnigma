@@ -17,9 +17,9 @@ type EnigmaClass struct {
 
 func (e EnigmaClass) Encode(text string, rotorPos string) string {
 	// set the start position of the rotors:
-	e.rotors[0].SetOfset(rune(rotorPos[0]))
-	e.rotors[1].SetOfset(rune(rotorPos[1]))
-	e.rotors[2].SetOfset(rune(rotorPos[2]))
+	e.rotors[0].SetOffset(rune(rotorPos[0]))
+	e.rotors[1].SetOffset(rune(rotorPos[1]))
+	e.rotors[2].SetOffset(rune(rotorPos[2]))
 
 	// clear the text of any whitespace
 	r := strings.NewReplacer(" ", "")
