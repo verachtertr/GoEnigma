@@ -1,7 +1,7 @@
 package enigma
 
 import (
-	"GoEnigma/rotor"
+	"github.com/RobinVerachtert/GoEnigma/rotor"
 	"strings"
 )
 
